@@ -18,10 +18,14 @@ export default class ExpansibleItem extends React.Component
     static propTypes={
         textTitle:PropTypes.string,
         textBody:PropTypes.string,
-        imageSource:PropTypes.string
+        imageSource:PropTypes.string,
+        first:PropTypes.bool,
+        last:PropTypes.bool
     }
     static efaultProps={
-        textTitle:'12 de Maio - Brasilia-DF' 
+        textTitle:' ',
+        first:false,
+        last:false
     }
     _onPress(mostra){
         LayoutAnimation.spring();
@@ -34,10 +38,9 @@ export default class ExpansibleItem extends React.Component
    {
         if(mostra)
         return(
-            <View>
-                <Text  style={styles.textBody}>Local: CCBB.</Text>
-                <Text  style={styles.textBody}>Ingressos: 61 3216-5566.</Text>
-                <Text  style={styles.textBody}>www.ingressos.com.br</Text>
+            <View style={{backgroundColor:'rgba(255,255,255,0.7)'}}>
+                <Text numberOfLines={5} style={styles.textBody}>{this.props.textBody}</Text>
+                
             </View>
             )
         return(null)
@@ -47,70 +50,78 @@ export default class ExpansibleItem extends React.Component
    render () {
     const { width, height, scale } = Dimensions.get('window');
     return (
-    <View style={[styles.container,{width: width-10}]}>
+    <View style={[styles.container,{width: width-10},this.props.first?styles.first:null,this.props.last?styles.last:null]}>
             <TouchableOpacity onPress={()=>{
                 this._onPress(this.state.open);
                 this.setState({open:!this.state.open,showBodyText:!this.state.showBodyText})
                 }}>
             <View style={[styles.content,{width: width-10},{height:this.state.h}]}>
               <ImageBackground style={[styles.imageBackground,{width: width-10,height:this.state.h}]} source={this.props.image}>
-                <Text  style={styles.textTitle}>{this.props.textTitle}</Text>
+                <View style={[{backgroundColor:'rgba(255,255,255,0.7)'},{width: width-10}]}>
+                    <Text  style={styles.textTitle}>{this.props.textTitle}</Text>
+                </View>
                 {this.renderBody(this.state.showBodyText)}
               </ImageBackground>
-                
             </View>
             </TouchableOpacity>
       </View>
     )
   }
    
-}
+ }
+
 const styles=StyleSheet.create({
     container:{
-        margin: 5,
-        // backgroundColor: '#ef4c',
+        elevation:10,
+        paddingLeft:10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight:80,
+        flex:1,
+        alignSelf:'center',
+        paddingTop:5,
+        paddingBottom:5  
+    },
+    content:{
         elevation:5,
         alignItems: 'center',
         justifyContent: 'center',
         minHeight:80,
         flex:1
     },
-    content:{
-        margin: 5,
-        // backgroundColor: '#ef4c',
-        elevation:5,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height:80,
-    
-    },
     imageBackground:{
-        height:80,
-        resizeMode:'stretch',
-        flex:1,
-        justifyContent:'center'
+        minHeight:80,
+        justifyContent:'center',
+        padding:5
         
     },
     image:{
         width:100,
         height:80,
         borderRadius:15,
-        resizeMode:'stretch'
+        resizeMode:'stretch',
+        
     },
     textTitle:{
         color:'black',
         fontWeight:'bold',
         textAlign:'center',
-        fontSize:30,
-        fontFamily:'Cochin'
+        fontSize:25,
+        fontFamily:'Cochin',
+        
     },
     textBody:{
-        color:'tomato',
+        color:'black',
         fontWeight:'bold',
         textAlign:'left',
-        fontSize:20,
+        fontSize:15,
         fontFamily:'Cochin',
-        paddingLeft:20,
-        
-    }
+        paddingLeft:20, 
+    },
+    first:{
+       paddingTop:15  
+    },
+    last:{
+        paddingBottom:25 
+     }
 });
