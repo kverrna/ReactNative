@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import Main from './src/pages/Main'
 import SonsPage from './src/pages/Sons';
 import AgendaPage from './src/pages/Agenda';
+import VideosPage from './src/pages/Video';
 
 let Home = createStackNavigator({ Main},{navigationOptions:{title:'App'}});
 let Config = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
@@ -18,7 +19,7 @@ let Sons = createStackNavigator({ SonsPage },{navigationOptions:{title:'App'}});
 let Videos = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
 let Fotos = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
 let Agenda = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
-let Mais = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
+let Mais = createStackNavigator({ VideosPage},{navigationOptions:{title:'App'}});
 
 
 
