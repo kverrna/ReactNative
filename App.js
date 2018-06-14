@@ -12,8 +12,9 @@ import Main from './src/pages/Main'
 import SonsPage from './src/pages/Sons';
 import AgendaPage from './src/pages/Agenda';
 import VideosPage from './src/pages/Video';
+import PessoasPage from './src/pages/Pessoas';
 
-let Home = createStackNavigator({ Main},{navigationOptions:{title:'App'}});
+let Home = createStackNavigator({ PessoasPage},{navigationOptions:{title:'Pessoas'}});
 let Config = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
 let Sons = createStackNavigator({ SonsPage },{navigationOptions:{title:'App'}});
 let Videos = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
@@ -85,9 +86,9 @@ const styles = StyleSheet.create({
 });
 
 const AppStack= createBottomTabNavigator({
+  Home,
   Agenda,
   Sons,
-  Home,
   Fotos,
   Mais,
 },
