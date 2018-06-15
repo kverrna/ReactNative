@@ -27,6 +27,29 @@ export default class Pessoas extends React.Component{
     {
 
     }
+    EhPrimo(numero)
+    {
+        let count =0;
+        for(let i=numero;i>0;i--)
+        {
+            if(numero%i==0)
+            count++;
+        }
+        if(count>2)
+            return false;
+        else 
+            return true;
+    }
+    somaPrimos(matricula)
+    {
+       let soma=0;
+       for(i=2;i<=matricula;i++)
+       {
+        if(this.EhPrimo(i))
+            {soma+=i;}
+       } 
+        return soma;
+    }
     render()
     {    
         return(
@@ -41,6 +64,8 @@ export default class Pessoas extends React.Component{
             </View>
             <Button title='Salvar' onPress={this.salvar()}/>
             <Text > Qtd pessoas cadastradas:{ this.state.realm?this.state.realm.objects('Pessoa').length:'0'}</Text>
+            <Text>Soma:{this.somaPrimos(6850)}</Text>
+           
         </View>
         );
     }

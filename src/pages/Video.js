@@ -23,7 +23,7 @@ export default class Video extends React.Component{
                     onChangeQuality={e => this.setState({ quality: e.quality })}
                     onError={e => this.setState({ error: e.error })}
 
-                    style={{ alignSelf: 'stretch', height: 300 ,padding:30}}
+                    style={{ alignSelf: 'stretch', height: 100 ,padding:30}}
                 />
                 
         </ScrollView>
