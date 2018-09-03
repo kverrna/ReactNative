@@ -1,12 +1,12 @@
 import React ,{Component} from 'react';
-import {Text,View,Image,StyleSheet,Button,TouchableOpacity} from 'react-native';
+import {Text,View,Image,StyleSheet,Button,TouchableOpacity,Platform} from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Entypo';
 import Toolbar from '../ToolBar/ToolBar'
 export default class Card extends React.Component
 {
     static propTypes={
-        imageSource:PropTypes.string.isRequired,
+        imageSource:PropTypes.number.isRequired,
         backgroundColor:PropTypes.string,
         imageWidth:PropTypes.number,
         imageHeight:PropTypes.number,
@@ -41,7 +41,18 @@ const styles = StyleSheet.create({
         elevation:4,
         paddingTop:2,
         paddingBottom:2,
-        resizeMode:'stretch'
+        // resizeMode:'stretch',
+        ...Platform.select({
+            ios:{
+                shadowColor:'#000',
+                shadowOffset:{height:-3},
+                shadowOpacity:0.1,
+                shadowRadius:4
+            },
+            android:{
+                elevation:20
+            }
+        }),
         
     },
     toolBarContainer:{

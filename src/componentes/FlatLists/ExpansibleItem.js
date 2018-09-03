@@ -80,20 +80,25 @@ const styles=StyleSheet.create({
         flex:1,
         alignSelf:'center',
         paddingTop:5,
-        paddingBottom:5  
+        // paddingBottom:5,
+        // borderRadius:4,
+        // borderWidth:10,
+        // borderColor:'#fff'  
     },
     content:{
         elevation:5,
         alignItems: 'center',
         justifyContent: 'center',
         minHeight:80,
-        flex:1
+        width:40,
+        flex:1,
+        alignSelf:'center'
     },
     imageBackground:{
         minHeight:80,
         justifyContent:'center',
-        padding:5
-        
+        // resizeMode:'stretch',
+        width:40,
     },
     image:{
         width:100,

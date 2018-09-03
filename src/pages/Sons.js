@@ -12,9 +12,38 @@ export default class Sons extends React.Component
     
     render(){
         return (
-            <ScrollView style={{backgroundColor:'gray'}}>
+            
+            <ScrollView style={styles.maincontainer}>
            
-            <Card imageSource={require('../../resources/imagens/icons/bb.png')} backgroundColor='blue'first={true}>
+            <Card imageSource={require('../../resources/imagens/hungria001.jpg')} backgroundColor='black'first={true}>
+                <ToolBar >
+                    <ToolBarItem name='facebook' />
+                    <ToolBarItem name='instagram' />
+                    <ToolBarItem name='share-2' start={false}/>
+                </ToolBar>
+            </Card>
+            <Card imageSource={require('../../resources/imagens/hungria002.jpg')} backgroundColor='black'first={true}>
+                <ToolBar >
+                    <ToolBarItem name='facebook' />
+                    <ToolBarItem name='instagram' />
+                    <ToolBarItem name='share-2' start={false}/>
+                </ToolBar>
+            </Card>
+            <Card imageSource={require('../../resources/imagens/hungria004.jpg')} backgroundColor='black'first={true}>
+                <ToolBar >
+                    <ToolBarItem name='facebook' />
+                    <ToolBarItem name='instagram' />
+                    <ToolBarItem name='share-2' start={false}/>
+                </ToolBar>
+            </Card>
+            <Card imageSource={require('../../resources/imagens/hungria005.jpg')} backgroundColor='black'first={true}>
+                <ToolBar >
+                    <ToolBarItem name='facebook' />
+                    <ToolBarItem name='instagram' />
+                    <ToolBarItem name='share-2' start={false}/>
+                </ToolBar>
+            </Card>
+            <Card imageSource={require('../../resources/imagens/hungria007.jpg')} backgroundColor='black'first={true}>
                 <ToolBar >
                     <ToolBarItem name='facebook' />
                     <ToolBarItem name='instagram' />
@@ -26,4 +55,10 @@ export default class Sons extends React.Component
     );
     }
 }
+const styles= StyleSheet.create({
+    maincontainer:{
+        
+        backgroundColor:'gray'
+    }
+});
 

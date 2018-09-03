@@ -12,19 +12,22 @@ export default class ToolBarItem extends React.Component
         color:PropTypes.string,
         start:PropTypes.bool,
         padding:PropTypes.number,
+        text:PropTypes.string,
     }
     static defaultProps={
         size:25,
         color:'#333',
         start:true,
         padding:10,
+        text:null
         
     }
     
     render(){
         return (
-        <View style={{padding:this.props.padding,justifyContent:this.props.position}}>
+        <View style={{padding:this.props.padding,justifyContent:this.props.position,flexDirection:'row'}}>
             <Icon name={this.props.name} size={this.props.size}  color={this.props.color}/>
+            <Text style={{alignSelf:'center',padding:5}}>{this.props.text}</Text>
         </View>
     );
     }

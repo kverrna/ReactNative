@@ -11,9 +11,10 @@ export default class Video extends React.Component{
     render()
     {    
         return(
-        <ScrollView>
-                <YouTube
-                    videoId="Uhf7i-huOVo"   // The YouTube video ID
+        <ScrollView style={styles.main}>
+
+<YouTube
+                    videoId="63XyWeKWI0M"   // The YouTube video ID
                     play={false}             // control playback of video with true/false
                     fullscreen={false}       // control whether the video should play in fullscreen or inline
                     loop={false}             // control whether the video should loop when ended
@@ -23,9 +24,86 @@ export default class Video extends React.Component{
                     onChangeQuality={e => this.setState({ quality: e.quality })}
                     onError={e => this.setState({ error: e.error })}
 
-                    style={{ alignSelf: 'stretch', height: 100 ,padding:30}}
+                    style={styles.videoconainer}
                 />
-                
+                <YouTube
+                    videoId="EiQmbrvvDaY"   // The YouTube video ID
+                    play={false}             // control playback of video with true/false
+                    fullscreen={false}       // control whether the video should play in fullscreen or inline
+                    loop={false}             // control whether the video should loop when ended
+                    apiKey='AIzaSyAeO2WDeUoU7oFmPsbd1MMRI_aHbFdkFDQ'
+                    onReady={e => this.setState({ isReady: true })}
+                    onChangeState={e => this.setState({ status: e.state })}
+                    onChangeQuality={e => this.setState({ quality: e.quality })}
+                    onError={e => this.setState({ error: e.error })}
+
+                    style={styles.videoconainer}
+                />
+                 <YouTube
+                    videoId="pdFLuRQd0wQ"   // The YouTube video ID
+                    play={false}             // control playback of video with true/false
+                    fullscreen={false}       // control whether the video should play in fullscreen or inline
+                    loop={false}             // control whether the video should loop when ended
+                    apiKey='AIzaSyAeO2WDeUoU7oFmPsbd1MMRI_aHbFdkFDQ'
+                    onReady={e => this.setState({ isReady: true })}
+                    onChangeState={e => this.setState({ status: e.state })}
+                    onChangeQuality={e => this.setState({ quality: e.quality })}
+                    onError={e => this.setState({ error: e.error })}
+
+                    style={styles.videoconainer}
+                />
+                 <YouTube
+                    videoId="hBecvGXZaNM"   // The YouTube video ID
+                    play={false}             // control playback of video with true/false
+                    fullscreen={false}       // control whether the video should play in fullscreen or inline
+                    loop={false}             // control whether the video should loop when ended
+                    apiKey='AIzaSyAeO2WDeUoU7oFmPsbd1MMRI_aHbFdkFDQ'
+                    onReady={e => this.setState({ isReady: true })}
+                    onChangeState={e => this.setState({ status: e.state })}
+                    onChangeQuality={e => this.setState({ quality: e.quality })}
+                    onError={e => this.setState({ error: e.error })}
+
+                    style={styles.videoconainer}
+                />
+                <YouTube
+                    videoId="wNN-Jdk9Q8Y"   // The YouTube video ID
+                    play={false}             // control playback of video with true/false
+                    fullscreen={false}       // control whether the video should play in fullscreen or inline
+                    loop={false}             // control whether the video should loop when ended
+                    apiKey='AIzaSyAeO2WDeUoU7oFmPsbd1MMRI_aHbFdkFDQ'
+                    onReady={e => this.setState({ isReady: true })}
+                    onChangeState={e => this.setState({ status: e.state })}
+                    onChangeQuality={e => this.setState({ quality: e.quality })}
+                    onError={e => this.setState({ error: e.error })}
+
+                    style={styles.videoconainer}
+                />
+                <YouTube
+                    videoId="fsAiH0Yf07M"   // The YouTube video ID
+                    play={false}             // control playback of video with true/false
+                    fullscreen={false}       // control whether the video should play in fullscreen or inline
+                    loop={false}             // control whether the video should loop when ended
+                    apiKey='AIzaSyAeO2WDeUoU7oFmPsbd1MMRI_aHbFdkFDQ'
+                    onReady={e => this.setState({ isReady: true })}
+                    onChangeState={e => this.setState({ status: e.state })}
+                    onChangeQuality={e => this.setState({ quality: e.quality })}
+                    onError={e => this.setState({ error: e.error })}
+
+                    style={styles.videoconainer}
+                />
+                <YouTube
+                    videoId="LuDLSFob6GA"   // The YouTube video ID
+                    play={false}             // control playback of video with true/false
+                    fullscreen={false}       // control whether the video should play in fullscreen or inline
+                    loop={false}             // control whether the video should loop when ended
+                    apiKey='AIzaSyAeO2WDeUoU7oFmPsbd1MMRI_aHbFdkFDQ'
+                    onReady={e => this.setState({ isReady: true })}
+                    onChangeState={e => this.setState({ status: e.state })}
+                    onChangeQuality={e => this.setState({ quality: e.quality })}
+                    onError={e => this.setState({ error: e.error })}
+
+                    style={styles.videoconainer}
+                />
         </ScrollView>
         );
     }
@@ -35,11 +113,20 @@ export default class Video extends React.Component{
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        paddingVertical: 10,
-        flexDirection: 'column',
-        flexWrap: 'wrap',
-         
- }, content: {
+        padding:20        
+ },
+ videoconainer:{
+    alignSelf: 'stretch', 
+    height: 300 ,
+    padding:30,
+    borderWidth:10,
+    borderRadius:10,
+    borderColor:'#fff',
+    elevation:4,
+    backgroundColor:'#000',
+    marginTop:5
+ },
+  content: {
         padding: 20,
         margin: 5,
         backgroundColor: '#ef4c',

@@ -8,19 +8,18 @@ import {
   StackNavigator
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Feather';
-import Main from './src/pages/Main'
+import Main from './src/pages/Main';
+import FeedPage from './src/pages/Feed';
 import SonsPage from './src/pages/Sons';
 import AgendaPage from './src/pages/Agenda';
 import VideosPage from './src/pages/Video';
-import PessoasPage from './src/pages/Pessoas';
+import ContatoPage from './src/pages/Contato';
 
-let Home = createStackNavigator({ PessoasPage},{navigationOptions:{title:'Pessoas'}});
-let Config = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
-let Sons = createStackNavigator({ SonsPage },{navigationOptions:{title:'App'}});
-let Videos = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
-let Fotos = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
-let Agenda = createStackNavigator({ AgendaPage},{navigationOptions:{title:'App'}});
-let Mais = createStackNavigator({ VideosPage},{navigationOptions:{title:'App'}});
+let Home = createStackNavigator({ FeedPage},{navigationOptions:{title:'Hungria'}});
+let Sons = createStackNavigator({ VideosPage },{navigationOptions:{title:'Sons'}});
+let Fotos = createStackNavigator({ SonsPage},{navigationOptions:{title:'Galeria'}});
+let Agenda = createStackNavigator({ AgendaPage},{navigationOptions:{title:'Agenda'}});
+let Mais = createStackNavigator({ ContatoPage},{navigationOptions:{title:'Mais'}});
 
 
 

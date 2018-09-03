@@ -64,7 +64,7 @@ export default class Pessoas extends React.Component{
             </View>
             <Button title='Salvar' onPress={this.salvar()}/>
             <Text > Qtd pessoas cadastradas:{ this.state.realm?this.state.realm.objects('Pessoa').length:'0'}</Text>
-            <Text>Soma:{this.somaPrimos(6850)}</Text>
+            <Text>Soma:{this.somaPrimos(6849)}</Text>
            
         </View>
         );
